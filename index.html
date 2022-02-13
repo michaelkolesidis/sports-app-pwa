@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Initial Modal 1 to enter title and number of rows -->
+    <div class="initialModal1">
+      <div class="input-field">
+        <label for="title">Sport Event Name</label>
+        <input class="input" id="title" name="title" type="text" />
+        <label for="rows">Number of Rows</label>
+        <input class="input" id="rows" name="rows" type="text" />
+        <button class="submitButton1" type="submit">Submit</button>
+      </div>
+    </div>
+
+    <!-- Initial Modal 2 to enter types of rows -->
+    <div class="initialModal2">
+      <div class="initialModal2content"></div>
+      <button class="submitButton2" type="submit">Submit</button>
+    </div>
+
+    <!-- Buttons to add entries -->
+    <div id="controls">
+      <button class="addButton">Add Entry</button>
+    </div>
+
+    <!-- Modal to add entries -->
+    <div class="modal">
+      <div class="modalContent"></div>
+      <button class="submitButton3" type="submit">Submit</button>
+    </div>
+
+    <!-- Table -->
+    <table id="table">
+      <thead>
+        <tr id="tableRows"></tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+      <tfoot id="tableFoot"></tfoot>
+    </table>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
