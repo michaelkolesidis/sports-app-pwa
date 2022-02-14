@@ -24,6 +24,8 @@ const tableRows = document.getElementById("tableRows");
 const tableBody = document.getElementById("tableBody");
 const tableFoot = document.getElementById("tableFoot");
 
+const filters = document.querySelector(".filters");
+
 let tableInitialized = false;
 let modalOpen = false;
 
@@ -67,7 +69,7 @@ submitButton1.addEventListener("click", function () {
 // If local storage exists and Table has already been created we Load the data
 function load() {
   for (let i = 0; i < rows; i++) {
-    tableRows.innerHTML += `<td>${rowNames[i]}</td>`;
+    tableRows.innerHTML += `<td class="rowTitles">${rowNames[i]}</td>`;
 
     modalContent.innerHTML += `<div class="input-field">
                 <label for="${rowNames[i]}">${rowNames[i]}</label>
@@ -75,11 +77,12 @@ function load() {
               </div>`;
   }
 
-  header.innerHTML = `<h1>${title}</h1>`
+  header.innerHTML = `<h1 id="title">${title}</h1>`
 
   initialModal2.style.display = "none";
   controls.style.display = "block";
   table.style.display = "block";
+  filters.style.display = "block";
   tableInitialized = true;
 }
 
@@ -98,10 +101,10 @@ function initialize() {
   }
   localStorage.setItem("rowNames", JSON.stringify(rowNames));
 
-  header.innerHTML = `<h1>${title}</h1>`
+  header.innerHTML = `<h1 id="title">${title}</h1>`
   
   for (let i = 0; i < rows; i++) {
-    tableRows.innerHTML += `<td>${rowNames[i]}</td>`;
+    tableRows.innerHTML += `<td class="rowTitles"">${rowNames[i]}</td>`;
 
     modalContent.innerHTML += `<div class="input-field">
                 <label for="${rowNames[i]}">${rowNames[i]}</label>
@@ -112,6 +115,7 @@ function initialize() {
   initialModal2.style.display = "none";
   controls.style.display = "block";
   table.style.display = "block";
+  filters.style.display = "block";
   tableInitialized = true;
 }
 

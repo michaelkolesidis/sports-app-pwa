@@ -35,7 +35,6 @@ body {
   /* Using the imported font family */
   font-family: "Poppins", sans-serif;
   font-size: 0.7em;
-  line-height: 1.5rem;
 }
 
 /* Background gradient animation keyframes */
@@ -60,10 +59,6 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
-}
-
-iframe {
-  border: none;
 }
 
 /****************************** NAVIGATION BAR ******************************/
@@ -105,6 +100,7 @@ nav :nth-child(3) {
   /* Container elements displayed as a vertical flex */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: fit-content;
   /* Setting both side margins to auto in order to center the container horizontally */
   margin: 15rem auto 6rem auto;
@@ -113,16 +109,20 @@ nav :nth-child(3) {
   /* Set cursor to default to avoid it being transformed
        * to the text cursor while hovering over text */
   cursor: default;
-}
-
-/******************************  HEADER ******************************/
-header {
-  text-align: center;
-}
-
-header h1 {
+  min-width: 60rem;
   padding: 2rem;
-  font-size: 2.6rem;
+}
+
+.container * {
+    font-size: 2rem;
+}
+
+/******************************  TITLE ******************************/
+#title {
+  text-align: center;
+  font-size: 3.6rem;
+  margin: 0 0 2rem 0;
+  padding: 2rem;
   line-height: 3rem;
   /* Text color gradient */
   background: linear-gradient(
@@ -137,10 +137,10 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
+
 /******************************  CONTROLS ******************************/
 #controls {
   display: flex;
-  justify-content: flex-end;
   margin: auto;
 }
 
@@ -169,61 +169,27 @@ header h1 {
 
 /******************************  RESULTS TABLE ******************************/
 
-#tableRows {
-  font-weight: 600;
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  text-align: center;
+#table {
+  margin: auto;
 }
+
+#table * {
+}
+
+.rowTitles {
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin: 4rem;
+    text-align: center;
+  }
 
 td {
   text-align: center;
-  margin: 0.6rem 1.6rem;
-  font-size: 1.4rem;
+  margin-left: 4rem; 
+   font-size: 1.4rem;
 }
 
-.row div {
-  transition: all 1s;
-  margin: 0.6rem 1.6rem;
-  font-size: 1.4rem;
-}
 
-i {
-  font-size: 2rem;
-  margin: 0.5rem;
-  padding: 0.2rem;
-}
-
-i:hover {
-  /* box-shadow: 0 2px 8px rgba(167, 167, 167, 0.6); */
-  color: var(--border);
-}
-
-/******************************  RACE REPORT ******************************/
-aside {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border);
-  margin: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-aside h2 {
-  font-size: 1.6rem;
-  margin: 3rem 0 2rem;
-  text-align: center;
-}
-
-aside iframe {
-  width: 100%;
-}
-
-aside p {
-  max-width: 50rem;
-  text-align: justify;
-  font-size: 1.4rem;
-}
 
 /******************************  FOOTER ******************************/
 footer {
@@ -231,7 +197,7 @@ footer {
   width: 100%;
   text-align: center;
   color: var(--background);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   word-spacing: 0.2rem;
   cursor: default;
@@ -279,37 +245,6 @@ footer a:hover {
       color: var(--background);
     } */
 
-  .row:hover .name {
-    transform: perspective(900px) translateZ(180px);
-  }
-
-  .row:hover img.flag {
-    transform: perspective(900px) translateZ(280px);
-  }
-
-  .row:hover .time {
-    transform: perspective(800px) translateZ(280px);
-  }
-
-  .row:hover .rank {
-    transform: perspective(800px) translateZ(380px);
-  }
-
-  aside {
-    display: block;
-  }
-
-  aside h2 {
-    text-align: left;
-  }
-
-  /* Floating the YouTube player on the right, 
-       * with the text wrapping around */
-  aside iframe {
-    float: right;
-    margin: 0 0 2rem 2rem;
-    width: auto;
-  }
 }
 
 /* Large screens */
@@ -336,66 +271,45 @@ footer a:hover {
   .container {
     max-width: 1000px;
   }
-
-  header .new-line {
-    display: none;
-  }
-
-  main {
-    grid-template-columns: 0.5fr 1.5fr 3fr 1fr 1.3fr;
-  }
-
-  main .notes {
-    display: inline;
-  }
 }
 
 /* Very large screens */
 @media all and (min-width: 1200px) {
-  main {
-    display: grid;
-    grid-template-columns: 0.5fr 1.5fr 3.5fr 1.2fr 1.2fr 1fr;
-    background: var(--background);
-    padding: 2rem;
-  }
-
-  main .reaction {
-    display: inline;
-  }
-
   .container {
     width: fit-content;
   }
-
-  .row:hover .name {
-    transform: perspective(900px) translateZ(280px);
-  }
-
-  .row:hover img.flag {
-    transform: perspective(900px) translateZ(380px);
-  }
-
-  .row:hover .time {
-    transform: perspective(800px) translateZ(280px);
-  }
-
-  .row:hover .rank {
-    transform: perspective(800px) translateZ(380px);
-  }
-
-  aside p {
-    max-width: 55rem;
-    text-align: justify;
-    font-size: 1.4rem;
-  }
 }
 
-/*********************NEW NEW NEW NEW NEW*************************/
+/********************* NEW *************************/
+
+.submit {
+  border: 0.3rem solid black;
+  background: 0;
+  margin: 0.4rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding: 0.4rem 0.8rem;
+
+}
+
+.submit:hover {
+  background: linear-gradient(
+    -45deg,
+    var(--gradient-color-3),
+    var(--gradient-color-2)
+  );
+  color: white;
+  border: 0.3rem solid white;
+}
 
 .input-field {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#showLabel {
+  font-weight: 600;
 }
 
 .initialModal2 {
@@ -412,8 +326,24 @@ footer a:hover {
 
 .modal {
   display: none;
+  font-weight: 600;
 }
 
-#filters {
-  /* display: none; */
+.filters {
+  display: none;
+  margin: auto;
 }
+
+.initialModal1 *{
+  font-weight: 600;
+}
+
+input[type=text] {
+  border: solid black;
+  text-align: center;
+}
+
+.initialModal2 *{
+  font-weight: 600;
+}
+
