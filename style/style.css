@@ -1,21 +1,419 @@
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* Variable declaration in :root pseudo-class */
+:root {
+  /* Colors */
+  --background: rgb(255, 255, 255);
+  --shadow: rgba(105, 105, 105, 0.2);
+  --border: rgb(126, 126, 126);
+  --gradient-color-1: #e9db8c;
+  --gradient-color-2: #df94cc;
+  --gradient-color-3: #74c3e0;
+  --gradient-color-4: #72e0c7;
+}
+
+/****************************** GENERAL RULES ******************************/
+html,
+body {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  /* The gradient to be displayed as the body background */
+  background: linear-gradient(
+    -45deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-3),
+    var(--gradient-color-4)
+  );
+  background-size: 400% 400%;
+  /* Animating the background gradient, 10 seconds for a full animation, ease transition
+     * effect with a slow start, then fast and end slowly, infinite sets the animation to
+     * run for an infinite time */
+  animation: gradient 10s ease infinite;
+  /* Using the imported font family */
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7em;
+  line-height: 1.5rem;
+}
+
+/* Background gradient animation keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Remove default link styles */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+iframe {
+  border: none;
+}
+
+/****************************** NAVIGATION BAR ******************************/
+nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+  align-items: center;
+  justify-content: center;
+  line-height: 2rem;
+}
+
+img.logo {
+  height: 3rem;
+}
+
+nav a {
+  position: relative;
+  top: 25%;
+  bottom: 25%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* The logo, the cental element in horizontal flex on large screens,
+ * will be the first element on vertical flex on mobile */
+nav :nth-child(3) {
+  order: -1;
+}
+
+/******************************  CONTAINER ******************************/
+.container {
+  /* Container elements displayed as a vertical flex */
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* Setting both side margins to auto in order to center the container horizontally */
+  margin: 15rem auto 6rem auto;
+  background: var(--background);
+  box-shadow: 4px 4px 4px 2px var(--shadow);
+  /* Set cursor to default to avoid it being transformed
+       * to the text cursor while hovering over text */
+  cursor: default;
+}
+
+/******************************  HEADER ******************************/
+header {
+  text-align: center;
+}
+
+header h1 {
+  padding: 2rem;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  /* Text color gradient */
+  background: linear-gradient(
+    -45deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-3),
+    var(--gradient-color-4)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/******************************  CONTROLS ******************************/
+#controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+}
+
+#controls button {
+    margin-top: -10rem;
+  border: 0.3rem solid black;
+  color: black;
+  background: white;
+  /* border-radius: 2rem; */
+  font-size: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  margin:0 1rem;
+  width: 14rem;
+}
+
+#controls button:hover {
+  background: linear-gradient(
+    -45deg,
+    var(--gradient-color-3),
+    var(--gradient-color-2)
+  );
+  color: white;
+  border: 0.3rem solid white;
+}
+
+/******************************  RESULTS TABLE ******************************/
+
+#tableRows {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  margin: 0.6rem 1.6rem;
+  font-size: 1.4rem;
+}
+
+.row div {
+  transition: all 1s;
+  margin: 0.6rem 1.6rem;
+  font-size: 1.4rem;
+}
+
+i {
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+}
+
+i:hover {
+  /* box-shadow: 0 2px 8px rgba(167, 167, 167, 0.6); */
+  color: var(--border);
+}
+
+/******************************  RACE REPORT ******************************/
+aside {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+aside h2 {
+  font-size: 1.6rem;
+  margin: 3rem 0 2rem;
+  text-align: center;
+}
+
+aside iframe {
+  width: 100%;
+}
+
+aside p {
+  max-width: 50rem;
+  text-align: justify;
+  font-size: 1.4rem;
+}
+
+/******************************  FOOTER ******************************/
+footer {
+  height: 4rem;
+  width: 100%;
+  text-align: center;
+  color: var(--background);
+  font-size: 1.4rem;
+  font-weight: 600;
+  word-spacing: 0.2rem;
+  cursor: default;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/******************************  MEDIA QUERIES ******************************/
+/* Medium screens */
+@media all and (min-width: 600px) {
+  .container {
+    margin-top: 10rem;
+  }
+
+  nav {
+    flex-direction: row;
+    height: 4.3rem;
+    line-height: 4rem;
+    justify-content: space-around;
+    padding: 0 0 1.5rem 0;
+    box-shadow: 4px 4px 4px 2px var(--shadow);
+    border-bottom: 0;
+  }
+
+  nav :nth-child(3) {
+    order: 0;
+  }
+
+  main {
+    grid-template-columns: 0.5fr 1.5fr 3.5fr 1fr;
+  }
+
+  main .new-line {
+    display: none;
+  }
+
+  .row .country {
+    display: inline;
+    transition: color 1s;
+  }
+
+  /* .row:hover .country {
+      color: var(--background);
+    } */
+
+  .row:hover .name {
+    transform: perspective(900px) translateZ(180px);
+  }
+
+  .row:hover img.flag {
+    transform: perspective(900px) translateZ(280px);
+  }
+
+  .row:hover .time {
+    transform: perspective(800px) translateZ(280px);
+  }
+
+  .row:hover .rank {
+    transform: perspective(800px) translateZ(380px);
+  }
+
+  aside {
+    display: block;
+  }
+
+  aside h2 {
+    text-align: left;
+  }
+
+  /* Floating the YouTube player on the right, 
+       * with the text wrapping around */
+  aside iframe {
+    float: right;
+    margin: 0 0 2rem 2rem;
+    width: auto;
+  }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  nav a {
+    transition: transform 2s;
+  }
+
+  /* Elements on the left rotate to the right and come closer to the viewer on the Z-axis */
+  nav a.left:hover {
+    transform: perspective(200px) rotateY(20deg) translateZ(100px);
+  }
+
+  /* Cental element moves slightly lower on the Y-axsis and comes closer to the view on the Z-axis */
+  nav a.center:hover {
+    transform: perspective(200px) translateY(8px) translateZ(80px);
+  }
+
+  /* Elements on the right rotate to the left and come closer to the viewer on the Z-axis */
+  nav a.right:hover {
+    transform: perspective(200px) rotateY(-20deg) translateZ(100px);
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  header .new-line {
+    display: none;
+  }
+
+  main {
+    grid-template-columns: 0.5fr 1.5fr 3fr 1fr 1.3fr;
+  }
+
+  main .notes {
+    display: inline;
+  }
+}
+
+/* Very large screens */
+@media all and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 3.5fr 1.2fr 1.2fr 1fr;
+    background: var(--background);
+    padding: 2rem;
+  }
+
+  main .reaction {
+    display: inline;
+  }
+
+  .container {
+    width: fit-content;
+  }
+
+  .row:hover .name {
+    transform: perspective(900px) translateZ(280px);
+  }
+
+  .row:hover img.flag {
+    transform: perspective(900px) translateZ(380px);
+  }
+
+  .row:hover .time {
+    transform: perspective(800px) translateZ(280px);
+  }
+
+  .row:hover .rank {
+    transform: perspective(800px) translateZ(380px);
+  }
+
+  aside p {
+    max-width: 55rem;
+    text-align: justify;
+    font-size: 1.4rem;
+  }
+}
+
+/*********************NEW NEW NEW NEW NEW*************************/
+
 .input-field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .initialModal2 {
-    display: none;
+  display: none;
 }
 
 #table {
-    display: none;
+  display: none;
 }
 
 #controls {
-    display: none;
+  display: none;
 }
 
 .modal {
-    display: none;
+  display: none;
+}
+
+#filters {
+  /* display: none; */
 }

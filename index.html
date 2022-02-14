@@ -1,49 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata about the HTML document -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sports App</title>
+    <meta
+      name="description"
+      content="A table with the results of the 100m women's Olympic finals in Tokyo"
+    />
+    <meta
+      name="keywords"
+      content="women's, 100m, finals, results, 2020, olympics, athletics, medal table, tokyo, record, gold"
+    />
+    <meta name="author" content="Michael Kolesidis" />
+    <!-- Link with the CSS stylesheet -->
     <link rel="stylesheet" href="./style/style.css" />
+    <!-- Favicon to be displayed on browser tab -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Title to be displayed on browser tab -->
+    <title>Sports App</title>
   </head>
+
   <body>
-    <!-- Initial Modal 1 to enter title and number of rows -->
-    <div class="initialModal1">
-      <div class="input-field">
-        <label for="title">Sport Event Name</label>
-        <input class="input" id="title" name="title" type="text" />
-        <label for="rows">Number of Rows</label>
-        <input class="input" id="rows" name="rows" type="text" />
-        <button class="submitButton1" type="submit">Submit</button>
+    <!-- Navigation bar on top -->
+    <nav>
+      <a class="left" href="#">HISTORY</a>
+      <a class="left" href="#">ATHLETES</a>
+      <a class="center" target="_blank" href="https://olympics.com/en/"
+        ><img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/8/82/Olympic_Rings_black.svg"
+          alt="The logo of the International Olympic Committee, the Olympic Rings"
+      /></a>
+      <a class="right" href="#">COMPETITIONS</a>
+      <a class="right" href="#">SPORTS</a>
+    </nav>
+
+    <!-- Main element container -->
+
+    <div class="container">
+      <!-- Header -->
+      <header id="header"></header>
+
+      <!-- Initial Modal 1 to enter title and number of rows -->
+      <div class="initialModal1">
+        <div class="input-field">
+          <label for="title">Sport Event Name</label>
+          <input class="input" id="title" name="title" type="text" />
+          <label for="rows">Number of Rows</label>
+          <input class="input" id="rows" name="rows" type="text" />
+          <button class="submitButton1" type="submit">Submit</button>
+        </div>
       </div>
+
+      <!-- Initial Modal 2 to enter types of rows -->
+      <div class="initialModal2">
+        <div class="initialModal2content"></div>
+        <button class="submitButton2" type="submit">Submit</button>
+      </div>
+
+      <!-- Buttons to add entries -->
+      <div id="controls">
+        <button class="addButton">Add Entry</button>
+        <button class="clearButton">Clear All</button>
+      </div>
+
+      <!-- Modal to add entries -->
+      <div class="modal">
+        <div class="modalContent"></div>
+        <button class="submitButton3" type="submit">Submit</button>
+      </div>
+
+      <!-- Table -->
+      <table id="table">
+        <thead>
+          <tr id="tableRows"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+        <tfoot id="tableFoot"></tfoot>
+      </table>
+
+      <!-- Filters -->
+      <div class="filters">
+        <form>
+          <label for="show">Show</label>
+          <input type="radio" name="show" value="3" id="3" />3
+          <input type="radio" name="show" value="5" id="5" />5
+          <input type="radio" name="show" value="10" /> 10
+          <input type="radio" name="show" value="15" /> 15
+          <button class="submitButton4" type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- Race Report -->
+      <aside>
+        <h2>Report</h2>
+
+        <iframe
+          width="320"
+          height="200"
+          src="https://www.youtube.com/embed/2FIJUUnEkR8"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <p>
+          Defending champion Elaine Thompson-Herah led home a Jamaican clean
+          sweep in the Olympic women’s 100 metres final, posting an amazing
+          10.61 seconds to become the second-fastest woman in history.
+        </p>
+
+        <p>
+          Shelly-Ann Fraser-Pryce, who had been seeking a third gold in the
+          event, took silver in 10.74 with Shericka Jackson third in 10.76 at
+          the Tokyo Olympic Stadium on Saturday.
+        </p>
+
+        <p>
+          Defending champion Elaine Thompson-Herah led home a Jamaican clean
+          sweep in the Olympic women’s 100 metres final, posting an amazing
+          10.61 seconds to become the second-fastest woman in history.
+        </p>
+
+        <p>
+          Shelly-Ann Fraser-Pryce, who had been seeking a third gold in the
+          event, took silver in 10.74 with Shericka Jackson third in 10.76 at
+          the Tokyo Olympic Stadium on Saturday.
+        </p>
+      </aside>
     </div>
 
-    <!-- Initial Modal 2 to enter types of rows -->
-    <div class="initialModal2">
-      <div class="initialModal2content"></div>
-      <button class="submitButton2" type="submit">Submit</button>
-    </div>
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2021 | Made by
+        <a href="https://github.com/michaelkolesidis">Michael Kolesidis</a>
+      </p>
+    </footer>
 
-    <!-- Buttons to add entries -->
-    <div id="controls">
-      <button class="addButton">Add Entry</button>
-    </div>
-
-    <!-- Modal to add entries -->
-    <div class="modal">
-      <div class="modalContent"></div>
-      <button class="submitButton3" type="submit">Submit</button>
-    </div>
-
-    <!-- Table -->
-    <table id="table">
-      <thead>
-        <tr id="tableRows"></tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-      <tfoot id="tableFoot"></tfoot>
-    </table>
+    <script
+      src="https://kit.fontawesome.com/d98e80a4ed.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./script/main.js"></script>
   </body>

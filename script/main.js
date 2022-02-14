@@ -9,11 +9,15 @@ const modal = document.querySelector(".modal");
 const modalContent = document.querySelector(".modalContent");
 
 const addButton = document.querySelector(".addButton");
+const clearButton = document.querySelector(".clearButton");
 const submitButton1 = document.querySelector(".submitButton1");
 const submitButton2 = document.querySelector(".submitButton2");
 const submitButton3 = document.querySelector(".submitButton3");
+const submitButton4 = document.querySelector(".submitButton4");
 
 const controls = document.getElementById("controls");
+
+const header = document.getElementById("header");
 
 const table = document.getElementById("table");
 const tableRows = document.getElementById("tableRows");
@@ -23,9 +27,10 @@ const tableFoot = document.getElementById("tableFoot");
 let tableInitialized = false;
 let modalOpen = false;
 
-let title;
-let rows;
-let rowNames = [];
+let title = JSON.parse(localStorage.getItem("title")) || "";
+let rows = parseInt(JSON.parse(localStorage.getItem("rows"))) || "";
+let rowNames = JSON.parse(localStorage.getItem("rowNames") || "[]");
+let showItems = JSON.parse(localStorage.getItem("showItems")) || "";
 
 function showModal2() {
   title = document.getElementById("title").value;
@@ -59,34 +64,42 @@ submitButton1.addEventListener("click", function () {
   showModal2();
 });
 
+// If local storage exists and Table has already been created we Load the data
 function load() {
-  for (let i = 1; i <= parseInt(window.localStorage.rows); i++) {
-    rowNames[i - 1] = window.localStorage.rowNames[i - 1];
-  }
-
-  for (let i = 0; i < parseInt(window.localStorage.rows); i++) {
+  for (let i = 0; i < rows; i++) {
     tableRows.innerHTML += `<td>${rowNames[i]}</td>`;
 
     modalContent.innerHTML += `<div class="input-field">
-                    <label for="${rowNames[i]}">${rowNames[i]}</label>
-                    <input class="input" id="${rowNames[i]}" name="${rowNames[i]}" type="text" />
-                  </div>`;
+                <label for="${rowNames[i]}">${rowNames[i]}</label>
+                <input class="input" id="${rowNames[i]}" name="${rowNames[i]}" type="text" />
+              </div>`;
   }
-  initialModal1.style.display = "none";
+
+  header.innerHTML = `<h1>${title}</h1>`
+
   initialModal2.style.display = "none";
   controls.style.display = "block";
   table.style.display = "block";
   tableInitialized = true;
 }
 
-if (window.localStorage.length === 0) load();
+// We check if local storage exists and if yes we call load()
+if (window.localStorage.entries) {
+  initialModal1.style.display = "none";
+  controls.style.display = "block";
+  load();
+  render(entries);
+}
 
+// If local storage doesn't exist we initialize the table using our values
 function initialize() {
   for (let i = 1; i <= rows; i++) {
     rowNames[i - 1] = document.getElementById(`rowType${i}`).value;
   }
   localStorage.setItem("rowNames", JSON.stringify(rowNames));
 
+  header.innerHTML = `<h1>${title}</h1>`
+  
   for (let i = 0; i < rows; i++) {
     tableRows.innerHTML += `<td>${rowNames[i]}</td>`;
 
@@ -115,6 +128,11 @@ addButton.addEventListener("click", function () {
   }
 });
 
+clearButton.addEventListener("click", function () {
+  window.localStorage.clear();
+  location.reload();
+});
+
 let data;
 
 function addEntry() {
@@ -136,8 +154,18 @@ submitButton3.addEventListener("click", function () {
   render(entries);
 });
 
+// Filter button
+submitButton4.addEventListener("click", function (event) {
+  event.preventDefault();
+  showItems = parseInt(
+    document.querySelector('input[name="show"]:checked').value
+  );
+  localStorage.setItem("showItems", JSON.stringify(showItems));
+  render(entries);
+});
+
 function render(arr) {
-  if (window.localStorage.length == 0) {
+  if (!window.localStorage.showItems) {
     tableBody.innerHTML = "";
     let row = "";
 
@@ -149,15 +177,28 @@ function render(arr) {
       row = "";
     }
   } else {
-    tableBody.innerHTML = "";
-    let row = "";
+    if (showItems <= entries.length) {
+      tableBody.innerHTML = "";
+      let row = "";
 
-    for (let i = 0; i < entries.length; i++) {
-      for (let j = 0; j < rows; j++) {
-        row += `<td>${arr[i][j]}</td>`;
+      for (let i = 0; i < showItems; i++) {
+        for (let j = 0; j < rows; j++) {
+          row += `<td>${arr[i][j]}</td>`;
+        }
+        tableBody.innerHTML += `<tr>${row}</tr>`;
+        row = "";
       }
-      tableBody.innerHTML += `<tr>${row}</tr>`;
-      row = "";
+    } else {
+      tableBody.innerHTML = "";
+      let row = "";
+
+      for (let i = 0; i < entries.length; i++) {
+        for (let j = 0; j < rows; j++) {
+          row += `<td>${arr[i][j]}</td>`;
+        }
+        tableBody.innerHTML += `<tr>${row}</tr>`;
+        row = "";
+      }
     }
   }
 }
