@@ -80,8 +80,7 @@ img.logo {
   height: 3rem;
 }
 
-nav a,
-nav button {
+nav a {
   position: relative;
   top: 25%;
   bottom: 25%;
