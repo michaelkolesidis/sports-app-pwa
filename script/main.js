@@ -77,7 +77,7 @@ function load() {
               </div>`;
   }
 
-  header.innerHTML = `<h1 id="title">${title}</h1>`
+  header.innerHTML = `<h1 id="title">${title}</h1>`;
 
   initialModal2.style.display = "none";
   controls.style.display = "block";
@@ -101,8 +101,8 @@ function initialize() {
   }
   localStorage.setItem("rowNames", JSON.stringify(rowNames));
 
-  header.innerHTML = `<h1 id="title">${title}</h1>`
-  
+  header.innerHTML = `<h1 id="title">${title}</h1>`;
+
   for (let i = 0; i < rows; i++) {
     tableRows.innerHTML += `<td class="rowTitles"">${rowNames[i]}</td>`;
 

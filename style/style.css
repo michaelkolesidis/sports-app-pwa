@@ -80,13 +80,15 @@ img.logo {
   height: 3rem;
 }
 
-nav a {
+nav a,
+nav button {
   position: relative;
   top: 25%;
   bottom: 25%;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  border: 0;
 }
 
 /* The logo, the cental element in horizontal flex on large screens,
@@ -114,7 +116,7 @@ nav :nth-child(3) {
 }
 
 .container * {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 /******************************  TITLE ******************************/
@@ -137,7 +139,6 @@ nav :nth-child(3) {
   -webkit-text-fill-color: transparent;
 }
 
-
 /******************************  CONTROLS ******************************/
 #controls {
   display: flex;
@@ -145,7 +146,7 @@ nav :nth-child(3) {
 }
 
 #controls button {
-    margin-top: -10rem;
+  margin-top: -10rem;
   border: 0.3rem solid black;
   color: black;
   background: white;
@@ -153,7 +154,7 @@ nav :nth-child(3) {
   font-size: 2rem;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
-  margin:0 1rem;
+  margin: 0 1rem;
   width: 14rem;
 }
 
@@ -173,23 +174,18 @@ nav :nth-child(3) {
   margin: auto;
 }
 
-#table * {
-}
-
 .rowTitles {
-    font-weight: 600;
-    font-size: 2.4rem;
-    margin: 4rem;
-    text-align: center;
-  }
+  font-weight: 600;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 0.6rem 1rem;
+}
 
 td {
   text-align: center;
-  margin-left: 4rem; 
-   font-size: 1.4rem;
+  margin-left: 4rem;
+  font-size: 1.4rem;
 }
-
-
 
 /******************************  FOOTER ******************************/
 footer {
@@ -244,7 +240,6 @@ footer a:hover {
   /* .row:hover .country {
       color: var(--background);
     } */
-
 }
 
 /* Large screens */
@@ -289,7 +284,6 @@ footer a:hover {
   font-weight: 600;
   font-size: 1.8rem;
   padding: 0.4rem 0.8rem;
-
 }
 
 .submit:hover {
@@ -334,16 +328,29 @@ footer a:hover {
   margin: auto;
 }
 
-.initialModal1 *{
+.initialModal1 * {
   font-weight: 600;
 }
 
-input[type=text] {
+input[type="text"] {
   border: solid black;
   text-align: center;
 }
 
-.initialModal2 *{
+.initialModal2 * {
   font-weight: 600;
 }
 
+#install {
+  color: red;
+  background: linear-gradient(
+    -45deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-3),
+    var(--gradient-color-4)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

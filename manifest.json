@@ -1,0 +1,20 @@
+{
+  "short_name": "Sports App",
+  "name": "Sports App",
+  "icons": [
+    {
+      "src": "/assets/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "white",
+  "display": "standalone",
+  "description": "An app to display sports results"
+}

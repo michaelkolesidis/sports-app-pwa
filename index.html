@@ -18,23 +18,27 @@
     <link rel="stylesheet" href="./style/style.css" />
     <!-- Favicon to be displayed on browser tab -->
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <!-- Title to be displayed on browser tab -->
     <title>Sports App</title>
+    <script src="/script/common.js" defer></script>
+    <script src="/script/main.js" defer></script>
   </head>
 
   <body>
     <!-- Navigation bar on top -->
     <nav>
-      <a class="left" href="#">HISTORY</a>
-      <a class="left" href="#">ATHLETES</a>
+      <a class="left" href="#">HOME</a>
+      <a class="left" href="#">SPORTS</a>
       <a class="center" target="_blank" href="https://olympics.com/en/"
         ><img
           class="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/8/82/Olympic_Rings_black.svg"
+          src="./assets/olympic_rings_black.svg"
           alt="The logo of the International Olympic Committee, the Olympic Rings"
       /></a>
       <a class="right" href="#">COMPETITIONS</a>
-      <a class="right" href="#">SPORTS</a>
+      <button id="install" class="right">INSTALL</button>
     </nav>
 
     <!-- Main element container -->
@@ -106,7 +110,5 @@
       src="https://kit.fontawesome.com/d98e80a4ed.js"
       crossorigin="anonymous"
     ></script>
-
-    <script src="./script/main.js"></script>
   </body>
 </html>
