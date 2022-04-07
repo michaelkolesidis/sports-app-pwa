@@ -1,5 +1,6 @@
 <div align=center>
   <h2>Sports App (Progressive Web Application)</h2>
+  <img src="https://github.com/michaelkolesidis/sports-app-pwa/blob/main/sport-app-pwa-screenshot.png" style="width: 600px;">
   <h3 style="font-size: 30px"><a href="https://sports-app-pwa.netlify.app/" >Try me on Netlify!</a></h3>
 
 
