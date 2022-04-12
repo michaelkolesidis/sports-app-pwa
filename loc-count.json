@@ -8,6 +8,14 @@
   "linesOfCode": 238
  },
  {
+  "language": "JSON",
+  "files": 2,
+  "lines": 86,
+  "blanks": 0,
+  "comments": 0,
+  "linesOfCode": 86
+ },
+ {
   "language": "CSS",
   "files": 1,
   "lines": 355,
@@ -22,14 +30,6 @@
   "blanks": 11,
   "comments": 14,
   "linesOfCode": 89
- },
- {
-  "language": "JSON",
-  "files": 1,
-  "lines": 20,
-  "blanks": 0,
-  "comments": 0,
-  "linesOfCode": 20
  },
  {
   "language": "Markdown",
@@ -57,10 +57,10 @@
  },
  {
   "language": "Total",
-  "files": 9,
-  "lines": 847,
+  "files": 10,
+  "lines": 913,
   "blanks": 97,
   "comments": 63,
-  "linesOfCode": 687
+  "linesOfCode": 753
  }
 ]
