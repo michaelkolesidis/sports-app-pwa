@@ -18,7 +18,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Description
-Sports App is a <a href="https://en.wikipedia.org/wiki/Progressive_web_application">progressive web application</a> enabling the user to create custom tables, choosing a title,as well as,  the number and the names of the rows. Then, the user can insert entries to the table, and choose how many entries will be visible at any time. The web application is installable, and saves all the data in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a>.
+Sports App is a <a href="https://en.wikipedia.org/wiki/Progressive_web_application">progressive web application</a> enabling the user to create custom tables, choosing a title,as well as,  the number and the names of the rows. Then, the user can insert entries to the table, and choose how many entries will be visible at any time. The web application is installable, and saves all the data in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a>, including an option to clear the data.
 
 [//]: # (Free Software)
 <div align="center">
