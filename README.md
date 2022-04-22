@@ -1,6 +1,6 @@
 <div align=center>
   <h2>Sports App (Progressive Web Application)</h2>
-  <img src="https://github.com/michaelkolesidis/sports-app-pwa/blob/main/sport-app-pwa-screenshot.png" style="width: 600px;">
+  <img src="https://github.com/michaelkolesidis/sports-app-pwa/blob/main/sport-app-pwa-screenshot.png" style="width: 500px;">
   <h3 style="font-size: 30px"><a href="https://sports-app-pwa.netlify.app/" >Try me on Netlify!</a></h3>
 
 
@@ -17,7 +17,8 @@
 <img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/html5/html5-plain.svg" height="50px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
+## Description
+Sports App is a progressive web application enabling the user to create custom tables, choosing a title,as well as,  the number and the names of the rows. Then, the user can insert entries to the table, and choose how many entries will be visible at any time. The web application is installable, and saves all the data in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a>.
 
 [//]: # (Free Software)
 <div align="center">
