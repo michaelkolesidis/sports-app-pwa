@@ -8,6 +8,8 @@
   
 </div>
 
+
+
 ## Technologies Used
 
 <a href="https://en.wikipedia.org/wiki/JavaScript"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/javascript/javascript-original.svg" height="50px" /></a>
@@ -17,8 +19,20 @@
 <img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/html5/html5-plain.svg" height="50px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+
+
 ## Description
+
 Sports App is a <a href="https://en.wikipedia.org/wiki/Progressive_web_application">progressive web application</a> enabling the user to create custom tables, choosing a title,as well as,  the number and the names of the rows. Then, the user can insert entries to the table, and choose how many entries will be visible at any time. The web application is installable, and saves all the data in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a>, including an option to clear the data.
+
+
+
+## License
+
+Copyright (c) 2022 Michael Kolesidis<br>
+Licensed under the [GNU General Public License v3.0](https://github.com/michaelkolesidis/webproject-script/blob/main/LICENSE).
+
+
 
 [//]: # (Free Software)
 <div align="center">
