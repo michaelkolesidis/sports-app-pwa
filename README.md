@@ -27,6 +27,12 @@ Sports App is a <a href="https://en.wikipedia.org/wiki/Progressive_web_applicati
 
 
 
+## Related Projects
+
+[Project Olympics](https://github.com/michaelkolesidis/project-olympics)
+
+
+
 ## License
 
 Copyright (c) 2022 Michael Kolesidis<br>
